@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="theme-color" content="#101510">
+<title>Splattergrounds — Paintball Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <div class="noise"></div>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">S<span>+</span></span><span class="brand-name">SPLATTER<span>GROUNDS</span></span></a><div class="top-right"><span class="online-dot"></span><span class="mono">ARENA NETWORK <b>● LIVE</b></span><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button></div></header>
+  <section id="lobby" class="lobby">
+    <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> PAINTBALL, WITH A POINT TO PROVE</div><h1>OWN THE<br><em>ARENA.</em></h1><p class="hero-sub">One-on-one. Round by round. Every loss makes you more dangerous.</p><div class="hero-stats"><div><strong>01<span>v</span>01</strong><small>NO SQUADS. NO EXCUSES.</small></div><i></i><div><strong>∞</strong><small>WAYS TO COME BACK</small></div></div></div>
+    <div class="setup-card"><div class="card-head"><div><span class="step">01 / MATCH SETUP</span><h2>SET THE STAKES</h2></div><span class="bolt">↗</span></div>
+      <label class="field-label">MATCH FORMAT</label><div class="choice-row rounds"><button class="choice" data-rounds="3">3 <small>ROUNDS</small></button><button class="choice selected" data-rounds="5">5 <small>ROUNDS</small></button><button class="choice" data-rounds="7">7 <small>ROUNDS</small></button><button class="choice" data-rounds="9">9 <small>ROUNDS</small></button></div>
+      <label class="field-label map-label">ARENAS IN ROTATION <span id="mapCount">3 selected</span></label><div class="map-list" id="mapList"></div>
+      <div class="mode-switch"><div><strong>OPPONENT</strong><small>Take it online or warm up with a bot</small></div><div class="switches"><button id="botMode" class="mode active">BOT</button><button id="onlineMode" class="mode">ONLINE</button></div></div>
+      <div id="onlinePanel" class="online-panel hidden"><p>Direct peer connection. No account needed.</p><button id="hostBtn" class="outline-btn">HOST MATCH</button><button id="joinBtn" class="outline-btn">JOIN MATCH</button><textarea id="signalBox" placeholder="Paste connection code here"></textarea><div class="signal-actions"><button id="copyBtn" class="tiny-btn">COPY CODE</button><button id="connectBtn" class="tiny-btn">CONNECT</button></div><div id="netStatus" class="net-status">Waiting for connection</div></div>
+      <button id="startBtn" class="start-btn"><span>START MATCH</span><b>→</b></button><div class="card-foot"><span>⌨ WASD MOVE</span><span>↖ MOUSE AIM</span><span>● CLICK TO FIRE</span></div>
+    </div>
+    <div class="bottom-note"><span>DESIGNED TO GET MESSY</span><span>EST. 2025&nbsp; / &nbsp;FIELD 01—04</span></div>
+  </section>
+  <section id="game" class="game hidden"><canvas id="view"></canvas><div class="game-vignette"></div><div class="game-top"><div class="match-tag"><span class="tag-dot"></span><span id="arenaName">DUSTY DEPOT</span><small>LIVE ROUND</small></div><div class="scoreboard"><div class="score-side left"><small>YOU</small><strong id="youScore">0</strong><span class="score-health"><i id="youHealth"></i></span></div><div class="score-middle"><span id="roundLabel">ROUND 01</span><b>—</b></div><div class="score-side right"><small>RIVAL</small><strong id="enemyScore">0</strong><span class="score-health"><i id="enemyHealth"></i></span></div></div><button id="quitBtn" class="quit-btn">EXIT <span>×</span></button></div><div class="crosshair"><i></i><i></i><b></b></div><div class="hit-marker" id="hitMarker">×</div><div class="game-bottom"><div class="weapon"><div class="weapon-icon">⌁</div><div><strong id="weaponName">THE RENTAL</strong><small id="ammoLabel">PAINTBALL / 12</small></div></div><div class="center-hint" id="hint">WASD MOVE <span>·</span> CLICK FIRE <span>·</span> SHIFT SPRINT</div><div class="streak"><small>WIN STREAK</small><strong id="streak">00</strong></div></div><div id="toast" class="toast"></div><div class="round-overlay hidden" id="roundOverlay"><div class="result-kicker" id="resultKicker">ROUND WON</div><h2 id="resultTitle">NICE SHOT.</h2><p id="resultText">Next round loading...</p><div id="perkArea"></div><button id="nextBtn" class="start-btn"><span>CONTINUE</span><b>→</b></button></div><div class="move-controls"><button data-key="w">▲</button><span><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></span></div><div class="mobile-controls"><button id="fireTouch">FIRE</button><button id="sprintTouch">SPRINT</button></div></section>
+  <footer class="site-footer"><span>© SPLATTERGROUNDS FIELD CLUB</span><span>PLAY FAIR. HIT HARD.</span></footer>
+</main><script src="game.js"></script>
+</body></html>
